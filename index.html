@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <script src = "https://code.angularjs.org/snapshot/angular.min.js" ></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div ng-app = "currencyConverter" ng-controller = "currencyController" class = "bg-container">
+        <h1>Currency Converter</h1>
+        <div class = "enter-amount">
+            <label >Enter the Amount</label>
+            <input ng-model = "amount" class = "input-size" type="text" placeholder="{{currency}}">
+        </div>
+        
+        <div class = "currencies">
+            <div class = "currency-margin">
+                <label>From: </label>
+                <select ng-model = "from" ng-change = "changeCurrencyController()">
+                    <option hidden disabled value="">--Select an Option--</option>
+                    <option ng-repeat = "eachItem in currencyArray">{{eachItem}}</option>
+                </select>
+            </div>
+
+            <div class = "currency-margin">
+                <label>To:</label>
+            <select ng-model = "to">
+                <option hidden disabled value="">--Select an Option--</option>
+                <option ng-repeat = "eachItem in currencyArray">{{eachItem}}</option>
+            </select>
+            </div>
+        </div>
+        <div class="display-result">
+            <button ng-click = "endResult()" type = "button">Convert</button>
+            <h1 ng-model = "result">{{result | currency : resultCurrency :2}}</h1>
+        </div>
+    </div>
+    <script src = "app.js" ></script>
+    <script src = "main.controller.js" ></script>
+    <script src = "main.service.js" ></script>
+</body>
+</html>

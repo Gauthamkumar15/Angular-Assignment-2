@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+.bg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.enter-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+    min-height: 50px;
+}
+
+.currencies {
+    display: flex;
+    margin:10px;
+}
+
+.currency-margin {
+    margin: 7px;
+}
+
+
+.input-size {
+    height: 30px;
+    margin-left: 10px;
+}
+
+.display-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
